@@ -1,6 +1,6 @@
 @import "tailwindcss";
 :root {
-  --bs-primary: #08513f;
+  --bs-primary: #08513fee;
   --bs-secondary: #f1c152;
   --bs-dark: #0d0d0d;
 }
