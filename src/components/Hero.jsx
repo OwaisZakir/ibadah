@@ -24,9 +24,18 @@ export default function Hero() {
       .from(headingRef.current, { y: 40, opacity: 0 }, "-=0.4")
       .from(paragraphRef.current, { y: 30, opacity: 0 }, "-=0.6")
       .from(buttonGroupRef.current, { y: 20, opacity: 0 }, "-=0.6")
-      .from(rightImgRef.current, { x: 100, y: 20, opacity: 0 }, "-=0.4");
+      .from(
+        rightImgRef.current,
+        {
+          x: 100,
+          y: 20,
+          scale: 0.9,
+          opacity: 0,
+        },
+        "-=0.4"
+      );
 
-    // Parallax scroll effect for image
+    // Parallax effect
     gsap.to(rightImgRef.current, {
       y: -50,
       ease: "power1.out",
@@ -36,6 +45,15 @@ export default function Hero() {
         end: "bottom top",
         scrub: true,
       },
+    });
+
+    // Floating animation loop
+    gsap.to(rightImgRef.current, {
+      y: "+=20",
+      repeat: -1,
+      yoyo: true,
+      duration: 2,
+      ease: "sine.inOut",
     });
   }, []);
 
@@ -112,13 +130,13 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right Side (Hidden on Mobile) */}
+        {/* Right Side */}
         <div className="hidden md:flex w-full md:w-2/5 justify-center md:justify-end">
           <img
             ref={rightImgRef}
             src="/assets/hero/hero-side-img-1.png"
-            alt="Masjid"
-            className="w-4/5 sm:w-3/4 md:w-[80%] max-w-md drop-shadow-2xl"
+            alt="Quran Learning"
+            className="w-4/5 sm:w-3/4 md:w-[80%] max-w-md drop-shadow-2xl transition-transform duration-300 hover:scale-105 hover:drop-shadow-[0_10px_20px_rgba(0,0,0,0.3)]"
           />
         </div>
       </div>

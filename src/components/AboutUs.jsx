@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -18,34 +18,48 @@ export default function AboutUs() {
   const contentRef = useRef();
 
   useGSAP(() => {
-    // Batch animate images with ScrollTrigger
-    ScrollTrigger.batch(imagesRef.current, {
-      onEnter: (batch) => {
-        gsap.from(batch, {
-          scale: 0.9,
-          opacity: 0,
-          stagger: 0.2,
+    const ctx = gsap.context(() => {
+      // Animate images
+      ScrollTrigger.batch(imagesRef.current, {
+        onEnter: (batch) => {
+          gsap.fromTo(
+            batch,
+            { opacity: 0, scale: 0.9 },
+            {
+              opacity: 1,
+              scale: 1,
+              duration: 1,
+              stagger: 0.2,
+              ease: "power3.out",
+            }
+          );
+        },
+        start: "top 90%",
+        toggleActions: "play none none none",
+      });
+
+      // Animate content text (title, paragraph, vision, etc.)
+      gsap.fromTo(
+        contentRef.current.children,
+        { opacity: 0, x: 60 },
+        {
+          opacity: 1,
+          x: 0,
           duration: 1,
+          stagger: 0.2,
           ease: "power3.out",
-        });
-      },
-      start: "top 90%",
-      toggleActions: "play none none none",
+          scrollTrigger: {
+            trigger: contentRef.current,
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
     });
 
-    // Animate content text in a staggered way
-    gsap.from(contentRef.current.children, {
-      scrollTrigger: {
-        trigger: contentRef.current,
-        start: "top 85%",
-        toggleActions: "play none none none",
-      },
-      x: 60,
-      opacity: 0,
-      duration: 1,
-      stagger: 0.2,
-      ease: "power3.out",
-    });
+    ScrollTrigger.refresh();
+
+    return () => ctx.revert();
   }, []);
 
   return (
@@ -108,7 +122,6 @@ export default function AboutUs() {
               learning environment.
             </p>
 
-            {/* Vision / Mission */}
             <div className="grid md:grid-cols-2 gap-6">
               {[
                 {
@@ -136,7 +149,6 @@ export default function AboutUs() {
               ))}
             </div>
 
-            {/* Testimonial */}
             <div className="flex items-center gap-4 border rounded-xl p-4 shadow-sm">
               <Image
                 src="/assets/about/student.jpg"
@@ -157,7 +169,6 @@ export default function AboutUs() {
               </div>
             </div>
 
-            {/* Feature List */}
             <div className="grid grid-cols-2 gap-2 text-sm">
               {[
                 "Real-Time Projects",
