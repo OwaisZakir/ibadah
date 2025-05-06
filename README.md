@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1>🕌 Ibadah – Online Quran Learning Platform</h1>
 
-## Getting Started
+<p><strong>Ibadah</strong> is a modern and responsive web application built using Next.js and Tailwind CSS, designed to connect students with qualified Quran instructors across the globe. It provides an engaging platform for learning Quran recitation, Tajweed, and Islamic studies in a one-on-one environment.</p>
 
-First, run the development server:
+<p>🌐 <strong>Live Site:</strong> <a href="https://ibadah-clone.surge.sh/" target="_blank">https://ibadah-clone.surge.sh/</a><br>
+📦 <strong>Repo:</strong> <a href="https://github.com/OwaisZakir/ibadah" target="_blank">https://github.com/OwaisZakir/ibadah</a></p>
 
-```bash
-npm run dev
+<hr>
+
+<h2>✨ Features</h2>
+<ul>
+  <li>📖 Beautiful hero section with a compelling message</li>
+  <li>🧕 One-on-one Quran learning and Tajweed classes</li>
+  <li>📱 Fully responsive across all screen sizes</li>
+  <li>🎯 Clear call-to-action buttons and structured layout</li>
+  <li>💬 Testimonials and trust indicators</li>
+  <li>🛠️ Built with scalability and maintainability in mind</li>
+</ul>
+
+<hr>
+
+<h2>🚀 Tech Stack</h2>
+<ul>
+  <li><strong>Framework:</strong> <a href="https://nextjs.org/">Next.js</a></li>
+  <li><strong>Styling:</strong> <a href="https://tailwindcss.com/">Tailwind CSS</a></li>
+  <li><strong>Animations:</strong> <a href="https://greensock.com/gsap/">GSAP</a></li>
+  <li><strong>Icons:</strong> <a href="https://react-icons.github.io/react-icons/">React Icons</a></li>
+  <li><strong>Deployment:</strong> <a href="https://surge.sh/">Surge.sh</a></li>
+</ul>
+
+<hr>
+
+<h2>📁 Project Structure</h2>
+<pre><code>.
+├── public/               # Static assets
+├── src/
+│   ├── components/       # Reusable UI components
+│   └── app/              # Main page and routing
+├── tailwind.config.js    # Tailwind configuration
+├── next.config.mjs       # Next.js configuration
+├── package.json          # Project metadata and scripts
+</code></pre>
+
+<hr>
+
+<h2>🧑‍💻 Getting Started</h2>
+<p>Clone the project and install dependencies:</p>
+<pre><code>git clone https://github.com/OwaisZakir/ibadah.git
+cd ibadah
+npm install
+</code></pre>
+
+<p>Run the development server:</p>
+<pre><code>npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+</code></pre>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<p>Visit <a href="http://localhost:3000" target="_blank">http://localhost:3000</a> in your browser to view the app.</p>
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+<hr>
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+<h2>🚢 Deployment (via Surge)</h2>
+<pre><code>npm run build
+npx surge out https://your-surge-subdomain.surge.sh
+</code></pre>
+<p>Replace the URL with your desired Surge subdomain.</p>
 
-## Learn More
+<hr>
 
-To learn more about Next.js, take a look at the following resources:
+<h2>📝 License</h2>
+<p>This project is for educational/demo purposes. Feel free to fork and modify it for your own needs.</p>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<hr>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<h2>📬 Contact</h2>
+<p>For questions or collaboration inquiries, feel free to reach out via <a href="https://github.com/OwaisZakir/ibadah/issues" target="_blank">GitHub Issues</a>.</p>
